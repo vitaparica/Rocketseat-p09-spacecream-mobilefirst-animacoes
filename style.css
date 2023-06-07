@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*responsividade das fontes*/
+  font-size: 62.5%;
+  /*fontes*/
+  --ff-header: 'Staatliches', 'cursive';
+  --ff-body: 'Palanquin', sans-serif;
+  /*cores*/
+  --color0: #23053A;
+  --color1: #4A4E69;
+  --color2: #8E9AAF;
+  --color3: #CBC0D3;
+  --color4: #FEEAFA;
+  --color5: #EFF1FF;
+
+}
+
+body {
+  width: 40rem;
+  margin: 0 auto;
+  align-items: center;
+  background-color: var(--color5);
+}
+
+header {
+  background-color: var(--color2);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 28rem;
+  margin-bottom: 8rem;
+  padding-top: 4rem;
+
+}
+
+header img {
+  margin: 8rem auto 3.2rem;
+}
+
+header h1 {
+  font-family: var(--ff-header);
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+
+  background-color: var(--color3);
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2.5rem;
+  margin-bottom: 2.9rem;
+}
+
+header .text {
+  background-color: var(--color5);
+  padding-top: 2rem;
+  width: 100%;
+}
+
+header .text p {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  width: 100%;
+  
+  color: var(--color0);
+  background-color: var(--color5);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  
+}
+
+main {
+  margin-top: 14rem;
+  padding: 1.4rem 3.2rem 6rem;
+  background-color: var(--color5);
+}
+
+div .page {
+  display: grid;
+  align-items: center;
+  
+ }
+
+div .card, .hidden-card {
+ border-radius: 20px;
+ position: relative;
+ margin-bottom: 3.6rem;
+}
+
+div .card img, .hidden-card img {
+  transition: all 200ms;
+  filter: brightness(1);
+
+  animation: downtop 2000ms;
+}
+
+div .card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+div .hidden-card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+h2 {
+  background-color: var(--color4);
+  color: var(--color1);
+  border-radius: 20px;
+  
+  font-family: var(--ff-header);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  
+  height: 3.5rem;
+  width: 11.2rem;
+  padding: 0 2.4rem;
+
+
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  right: 2.8rem;
+
+  animation: topdown 2000ms;
+}
+
+footer {
+  display: none;
+}
+
+/*animacoes*/
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    width: 1280px;    
+  }
+
+  header {
+    height: 100%;
+    width: 37.7rem;    
+  }
+
+  header img {
+    margin: 0 auto 5rem;
+  }
+
+  header h1 {
+    height: 7rem;
+  }
+
+  header .text {
+    background-color: var(--color2);
+    width: 27.5rem;
+    height: 26.2rem;
+    margin: 3.2rem 5.2rem 12.5rem ;
+  }
+  
+  header .text p {
+    background-color: var(--color2);
+    color: white;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .page {
+    width: 90.3rem;
+    height: 72rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "A B E"
+    "D B F"
+    "D C F";
+    gap: 3.2rem;
+  }
+
+  .page div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .page div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .page div:nth-child(3) {
+    grid-area: C;
+  }
+  
+  .page div:nth-child(4) {
+    grid-area: D;
+  }
+  
+  .page div:nth-child(5) {
+    grid-area: E;
+    margin-bottom: 3rem;
+  }
+  
+  .page div:nth-child(6) {
+    grid-area: F;
+    margin-bottom: 2.5rem;
+  }
+
+  .card, .hidden-card{
+    margin: 0;
+  }
+
+  .card img, .hidden-card img {
+    width: 100%;
+    height: 100%;
+  }  
+
+  h2 {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    text-align: center;
+    justify-content: center;
+
+    color: #4A4E69;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #4A4E69;
+    font-weight: bold;
+  }
+}
